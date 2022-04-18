@@ -1,0 +1,15 @@
+use company;
+select * from countries;
+select email,phone_number from employees;
+select * from employees where last_name like "%fay";
+select hire_date from employees where last_name="Grant" or last_name="Whalen";
+select first_name,last_name from employees where job_id=(select job_id from jobs where job_title="shipping clerk");
+select * from employees where department_id=8;
+select * from dept order by department_id desc;
+select * from employees where last_name like "k%";
+select first_name,last_name from employees where hire_date like "%1996%";
+select job_title from jobs where max_salary<5000;
+select lower(email) from employees;
+select first_name,last_name from employees where hire_date like "%1995%";
+insert into employees(employee_id,first_name,last_name,job_id,department_id) values(69,"Paul","Newton",10,11);
+delete from dept where department_name="shipping"; 
