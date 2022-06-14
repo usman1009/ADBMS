@@ -21,7 +21,7 @@ from staff, department
 where staff.dept_id=department.dept_id and type_of_appointment = "Contract" group by staff.dept_id;
 
 
-select department.dept_name,max(staff.dept_id) as no_of_doctorate from staff,department where staff.dept_id=department.dept_id and staff.qualification="PhD";
+select department.dept_name,count(staff.staff_id) as no_of_doctorate from staff,department where staff.dept_id=department.dept_id and staff.qualification="PhD" group by department.dept_name order by count(staff.staff_id) desc  limit 1;
 
 
 select department.dept_name,avg(staff.salary) as average from department,staff where staff.dept_id=department.dept_id and type_of_appointment="Contract" group by department.dept_name order by department.dept_name;
